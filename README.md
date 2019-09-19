@@ -2,9 +2,11 @@
 
 ## Single service example
 
+This is example of single Spring boot application deployment running behind NodePort service.
+
 #### Clone this branch:
 ```sh
-$ git clone git@github.com:thenswan/spring-boot-k8s-samples
+$ git clone https://github.com/thenswan/spring-boot-k8s-samples.git
 ```
 
 #### Building and deploying service to local kubernetes node:
@@ -19,7 +21,7 @@ $ ./deploy-to-k8s.sh
 3. Create kubernetes deployment
 4. Create kubernetes service
 
-#### To clean-up, run (this will clean all built)..:
+#### To tear down what you created, run:
 ```sh
 $ cd spring-boot-k8s-samples/alpha
 $ ./clean-up.sh
@@ -44,10 +46,13 @@ alpha   NodePort   10.105.32.21   <none>        8081:31552/TCP   25s   run=alpha
 
 Note that EXTERNAL-IP denoted as `<none>`, url in this case will be: `localhost:31552/api/alpha/hello`
 
-#### Check out external ip and port (node port), then check out api:
+#### Check out external ip and port, then check out api:
 ```sh
 curl host:port/api/alpha/hello
 ```
 
-### To dive deeper
+## To dive deeper
 Check out sh files and comments
+
+## Issues and PRs
+...are very welcome!
