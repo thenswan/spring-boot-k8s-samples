@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    run: beta
+  name: beta
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: beta
+  template:
+    metadata:
+      labels:
+        run: beta
+    spec:
+      containers:
+      - image: beta
+        imagePullPolicy: Never
+        name: beta
+        ports:
+        - containerPort: 8082
+          protocol: TCP
